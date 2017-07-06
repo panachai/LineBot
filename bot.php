@@ -46,14 +46,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
-
-// $ composer require linecorp/line-bot-sdk
-//
-// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6AlXQo8ozkIIUPbDbrnNH9OBuqJhXVATMopsukLWQV+FvmXsCpd1rubnXKLz/2ySBTZRttlRKNqAGEP1ceiMYajlwdB04t89/1O/w1cDnyilFU=');
-//
-// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '0d063d59744bc653dde526c51ad431db']);
-//
-// $response = $bot->replyText('<reply token>', 'hello!');
-
-
 ?>
