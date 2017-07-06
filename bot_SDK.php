@@ -10,4 +10,5 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $response = $bot->replyText('<reply token>', 'hello!');
 
+echo "ok";
 ?>
