@@ -34,6 +34,9 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody();
 	exit();
 
+}else{
+
+  echo 'out of time to send';
 }
 
 
