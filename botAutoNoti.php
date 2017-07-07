@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Asia/Bangkok');
+if(!(date("H")<6 || date("H")>23)){ //control date
 	include ('line-bot.php');
 	include ('BxApiETH.php');
 
@@ -32,6 +34,7 @@
 	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody();
 	exit();
 
+}
 
 
 //linux code : curl -X POST -H 'Content-Type: application/json; charser=UTF-8' -H 'Authorization: Bearer [Channel Access Token]' -d '{ "to" : "[Your userId / User Id]", "messages" : [{ "type": "text", "text": "Server 127.0.0.1 have SSH login" }]}' https://api.line.me/v2/bot/message/push
