@@ -3,7 +3,7 @@
 date_default_timezone_set('Asia/Bangkok');
 if(!(date("H")<6 || date("H")>23)){ //control date
 	include ('line-bot.php');
-	include ('BxApiETH.php');
+	include ('apibx/BxApiETH.php');
 
 	$channelSecret = '0d063d59744bc653dde526c51ad431db';
 	$access_token  = 'REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6AlXQo8ozkIIUPbDbrnNH9OBuqJhXVATMopsukLWQV+FvmXsCpd1rubnXKLz/2ySBTZRttlRKNqAGEP1ceiMYajlwdB04t89/1O/w1cDnyilFU=';
@@ -17,22 +17,39 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 	// $val['last_price'];
 	// $val['volume_24hours'];
 
-	$bot->sendMessageNew('U291587c13144989597448437db2b8555', $arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
-	change : '.$arrayETH['change'].'
-	LastPrice : '.$arrayETH['last_price'].'
-	volume_24hours : '.$arrayETH['volume_24hours']);
-	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
-	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
-	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
+	$userId = 'U291587c13144989597448437db2b8555';
+	// $lowerValue = $bar ?: $baz; // for database
+	$lowerValue = 9000;
+	$higherValue = 10000;
 
-	if ($bot->isSuccess()) {
-		echo 'Succeeded!';
-		exit();
+
+if($userId == 'U291587c13144989597448437db2b8555'){ //ตรวจ userId จาก database (เดี๋ยวทำ)
+	if($arrayETH['last_price']<$lowerValue || $arrayETH['last_price']>$higherValue){
+		$bot->sendMessageNew($userId, $arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
+		change : '.$arrayETH['change'].'
+		LastPrice : '.$arrayETH['last_price'].'
+		volume_24hours : '.$arrayETH['volume_24hours']);
+
+
+			if ($bot->isSuccess()) {
+				echo 'Succeeded!';
+				exit();
+			}
+
+			// Failed
+			echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody();
+			exit();
+	}else{
+echo 'Not match range Value';
+
 	}
 
-	// Failed
-	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody();
-	exit();
+}
+
+	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
+	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
+	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
+
 
 }else{
 

@@ -1,7 +1,7 @@
 <?php
 
-echo $urlapibx = 'https://bx.in.th/api/';
-echo '<br>';
+$urlapibx = 'https://bx.in.th/api/';
+'<br>';
 //$urlapibx = 'https://bx.in.th/api/balance/';
 
 $json1 = file_get_contents($urlapibx);
