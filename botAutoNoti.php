@@ -19,7 +19,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 
 	$userId = 'U291587c13144989597448437db2b8555';
 	// $lowerValue = $bar ?: $baz; // for database
-	$lowerValue = 9400;
+	$lowerValue = 3000;
 	$higherValue = 9500;
 
 
