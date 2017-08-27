@@ -25,9 +25,13 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 
 if($userId == 'U291587c13144989597448437db2b8555'){ //ตรวจ userId จาก database (เดี๋ยวทำ)
 	if($arrayETH['last_price']<$lowerValue || $arrayETH['last_price']>$higherValue){
-		$bot->sendMessageNew($userId, $arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
+		$bot->sendMessageNew($userId,
+		$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
 		LastPrice : '.$arrayETH['last_price'].'
-		volume_24hours : '.$arrayETH['volume_24hours']);
+		volume_24hours : '.$arrayETH['volume_24hours'].
+		$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'
+		LastPrice : '.$arrayOMG['last_price'].'
+		volume_24hours : '.$arrayOMG['volume_24hours']);
 //change : '.$arrayETH['change'].'
 
 			if ($bot->isSuccess()) {

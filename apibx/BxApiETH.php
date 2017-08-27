@@ -23,6 +23,8 @@ foreach ($jsonIterator as $key => $val) {
           // $val['volume_24hours'];
           $arrayETH = $val;
           //echo $val['orderbook']; //รอทำต่อ
+        }else if ($key == '26'){
+          $arrayOMG = $val;
         }
 		} else {
 			//echo "$key => $val<br>";
