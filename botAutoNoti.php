@@ -28,8 +28,8 @@ if($userId == 'U291587c13144989597448437db2b8555'){ //ตรวจ userId จา
 		$bot->sendMessageNew($userId,
 		$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
 		LastPrice : '.$arrayETH['last_price'].'
-		volume_24hours : '.$arrayETH['volume_24hours'].''.
-		$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'
+		volume_24hours : '.$arrayETH['volume_24hours'].'
+		'.$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'
 		LastPrice : '.$arrayOMG['last_price'].'
 		volume_24hours : '.$arrayOMG['volume_24hours']);
 //change : '.$arrayETH['change'].'
