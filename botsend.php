@@ -17,12 +17,13 @@
 
 	$bot->sendMessageNew('U291587c13144989597448437db2b8555',
 	$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'
-	change : '.$arrayETH['change'].'
 	LastPrice : '.$arrayETH['last_price'].'
-	volume_24hours : '.$arrayETH['volume_24hours'].
+	volume_24hours : '.$arrayETH['volume_24hours'].''.
 	$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'
 	LastPrice : '.$arrayOMG['last_price'].'
 	volume_24hours : '.$arrayOMG['volume_24hours']);
+
+	//change : '.$arrayETH['change'].'
 	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
 	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
 	// $bot->sendMessageNew('U291587c13144989597448437db2b8555', 'Hello World !!');
