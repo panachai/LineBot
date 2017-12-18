@@ -31,8 +31,13 @@ if (!empty($events)) {
 			
 			// // Get text sent
 			// $text = $event['message']['text'];
+		}else{
+			$bot->replyMessageNew($bot->replyToken, "Not text : " .$events);
+
 		}
 	}
+
+	$bot->replyMessageNew($bot->replyToken, "Not Send : events as Event : " .$events);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
