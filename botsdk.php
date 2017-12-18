@@ -17,40 +17,50 @@ $channelSecret = '0d063d59744bc653dde526c51ad431db';
 $access_token  = 'REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6AlXQo8ozkIIUPbDbrnNH9OBuqJhXVATMopsukLWQV+FvmXsCpd1rubnXKLz/2ySBTZRttlRKNqAGEP1ceiMYajlwdB04t89/1O/w1cDnyilFU=';
 
 $bot = new BOT_API($channelSecret, $access_token);
+$events = $bot->isEvents;
 
-if (!empty($bot->isEvents)) {
+if (!empty($events)) {
+ 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
  
+	 // Loop through each event
+	foreach ($events['events'] as $event) {
+		// Reply only when message sent is in 'text' format
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			
+			$bot->replyMessageNew($bot->replyToken, "ทดสอบ : ". $event['message']['text']);
+			
+			// // Get text sent
+			// $text = $event['message']['text'];
+			// // Get replyToken
+			// $replyToken = $event['replyToken'];
 
-	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
-	
+			// // Build message to reply back
+			// $messages = [
+			// 	'type' => 'text',
+			// 	'text' => $text
+			// ];
 
-	$jsonIterator = new RecursiveIteratorIterator(
-		new RecursiveArrayIterator(json_decode(json_encode($bot->message), TRUE)),
-		RecursiveIteratorIterator::SELF_FIRST);
-	$messageRecive = array();
+			// // Make a POST Request to Messaging API to reply to sender
+			// $url = 'https://api.line.me/v2/bot/message/reply';
+			// $data = [
+			// 	'replyToken' => $replyToken,
+			// 	'messages' => [$messages],
+			// ];
+			// $post = json_encode($data);
+			// $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-//--------------------------------------------
-	foreach ($jsonIterator as $key => $val) {
-				if(is_array($val)) { //for ETH
-			if($key == 'message'){
-			  //echo "$key:<br>";
-			  // $val['pairing_id'];
-			  // $val['primary_currency'];
-			  // $val['secondary_currency'];
-			  // $val['change'];
-			  // $val['last_price'];
-			  // $val['volume_24hours'];
-			 // $messageRecive = $val;
-			  //echo $val['orderbook']; //รอทำต่อ
-			}
-			} else {
-				//echo "$key => $val<br>";
-			}
+			// $ch = curl_init($url);
+			// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			// curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			// $result = curl_exec($ch);
+			// curl_close($ch);
+
+			// echo $result . "\r\n";
+		}
 	}
-
-//--------------------------------------------
-
-	$bot->replyMessageNew($bot->replyToken, "2 ทดสอบ : ". $messageRecive);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
