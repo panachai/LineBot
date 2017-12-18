@@ -40,7 +40,7 @@ if (!empty($bot->isEvents)) {
 			  // $val['change'];
 			  // $val['last_price'];
 			  // $val['volume_24hours'];
-			  $messageRecive = $val;
+			 // $messageRecive = $val;
 			  //echo $val['orderbook']; //รอทำต่อ
 			}
 			} else {
