@@ -45,11 +45,11 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 				.PHP_EOL.$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'LP : '.$arrayOMG['last_price']
 				
 			);
-
+//.PHP_EOL.$testvaluejson
 //change : '.$arrayETH['change'].'
 
 			if ($bot->isSuccess()) {
-				echo 'Succeeded!';
+				echo 'Succeeded! ' . $testvaluejson;
 				exit();
 			}
 
