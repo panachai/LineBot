@@ -43,7 +43,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 				$bot->sendMessageNew($userId,
 				$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'LP : '.$arrayETH['last_price']
 				.PHP_EOL.$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'LP : '.$arrayOMG['last_price']
-				.PHP_EOL.$testvaluejson
+				
 			);
 
 //change : '.$arrayETH['change'].'
@@ -57,7 +57,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 			echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody();
 			exit();
 	}else{
-echo 'Not match range Value';
+		echo 'Not match range Value';
 
 	}
 
