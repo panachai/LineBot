@@ -32,6 +32,8 @@ if (!empty($events)) {
 	 // Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
+		$bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first". $event['message']['text']);
+		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
 			$bot->replyMessageNew($bot->replyToken, "ทดสอบ : ". $event['message']['text']);

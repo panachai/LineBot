@@ -49,7 +49,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 //change : '.$arrayETH['change'].'
 
 			if ($bot->isSuccess()) {
-				echo 'Succeeded! ' . $testvaluejson;
+				echo 'Succeeded!';
 				exit();
 			}
 
