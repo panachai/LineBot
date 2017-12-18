@@ -29,7 +29,7 @@ $content = json_encode($bot->message);
 if (!empty($events)) {
 	 //$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
 
-	 $bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first". $events['message']['text']);
+	 $bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first เดี๋ยวทำต่อ". $events);
 
 	 // Loop through each event
 	foreach ($events['events'] as $event) {
