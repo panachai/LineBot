@@ -19,10 +19,38 @@ $access_token  = 'REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6
 $bot = new BOT_API($channelSecret, $access_token);
 
 if (!empty($bot->isEvents)) {
+ 
 
 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
 	
-	$bot->replyMessageNew($bot->replyToken, "2 ทดสอบ : ".$bot->isEvents." : ".$bot->tex);
+
+	$jsonIterator = new RecursiveIteratorIterator(
+		new RecursiveArrayIterator(json_decode(json_encode($bot->message), TRUE)),
+		RecursiveIteratorIterator::SELF_FIRST);
+	$messageRecive = array();
+
+//--------------------------------------------
+	foreach ($jsonIterator as $key => $val) {
+				if(is_array($val)) { //for ETH
+			if($key == 'message'){
+			  //echo "$key:<br>";
+			  // $val['pairing_id'];
+			  // $val['primary_currency'];
+			  // $val['secondary_currency'];
+			  // $val['change'];
+			  // $val['last_price'];
+			  // $val['volume_24hours'];
+			  $messageRecive = $val;
+			  //echo $val['orderbook']; //รอทำต่อ
+			}
+			} else {
+				//echo "$key => $val<br>";
+			}
+	}
+
+//--------------------------------------------
+
+	$bot->replyMessageNew($bot->replyToken, "2 ทดสอบ : ". $messageRecive);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
