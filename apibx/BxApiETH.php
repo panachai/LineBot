@@ -11,7 +11,7 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 $arrayETH = array();
 
-echo "test : ".$jsonIterator;
+$testvaluejson = $jsonIterator;
 
 foreach ($jsonIterator as $key => $val) {
 			if(is_array($val)) { //for ETH
@@ -28,6 +28,7 @@ foreach ($jsonIterator as $key => $val) {
         }else if ($key == '26'){
           $arrayOMG = $val;
         }
+
 		} else {
 			//echo "$key => $val<br>";
 		}
