@@ -19,7 +19,9 @@ $access_token  = 'REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6
 $bot = new BOT_API($channelSecret, $access_token);
 $content = json_encode($bot->message);
 
-$events = json_decode($content, true);
+// $events = json_decode($content, true);
+
+$events = $content;
 
 if (!empty($events)) {
  	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
