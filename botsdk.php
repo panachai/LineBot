@@ -39,7 +39,7 @@ if (!empty($events)) {
 		}
 	}
 
-	$bot->replyMessageNew($bot->replyToken, "Not Send : events as Event : " .$events);
+	$bot->replyMessageNew($bot->replyToken, "Not Send : events as Event : " .  $events[0]  . " : " .$events['message']['text']);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
