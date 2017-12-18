@@ -22,7 +22,7 @@ if (!empty($bot->isEvents)) {
 
 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
 	
-	$bot->replyMessageNew($bot->replyToken, "2 ทดสอบ : ");
+	$bot->replyMessageNew($bot->replyToken, "2 ทดสอบ : ".$bot->isEvents." : ".$bot->tex);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
