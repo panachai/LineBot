@@ -20,7 +20,7 @@ $bot = new BOT_API($channelSecret, $access_token);
 
 if (!empty($bot->isEvents)) {
 
-	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message)." : "."test");
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
