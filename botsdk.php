@@ -28,12 +28,14 @@ $content = json_encode($bot->message);
 
 if (!empty($events)) {
 	 //$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
-	 
+
+	 $bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first". $events['message']['text']);
+
 	 // Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		$bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first". $event['message']['text']);
-		
+	
+
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
 			$bot->replyMessageNew($bot->replyToken, "ทดสอบ : ". $event['message']['text']);
