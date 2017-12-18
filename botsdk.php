@@ -21,11 +21,14 @@ $content = json_encode($bot->message);
 
 // $events = json_decode($content, true);
 
-$events = $content;
+// $events = $content;
+$events = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($content, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
 
 if (!empty($events)) {
- 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
- 
+	 //$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
+	 
 	 // Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
