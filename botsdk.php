@@ -21,10 +21,10 @@ $content = json_encode($bot->message);
 
 // $events = json_decode($content, true);
 
-// $events = $content;
-$events = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($content, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
+  $events = $content;
+// $events = new RecursiveIteratorIterator(
+//     new RecursiveArrayIterator(json_decode($content, TRUE)),
+//     RecursiveIteratorIterator::SELF_FIRST);
 
 if (!empty($events)) {
 	 //$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
