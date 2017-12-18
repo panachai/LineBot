@@ -17,9 +17,9 @@ $channelSecret = '0d063d59744bc653dde526c51ad431db';
 $access_token  = 'REu678+TOo+xbHA8QWYQCbQmPt5Sj4w1HKeC3wLvdzDlgKNM6RikwsMB79nMz6AlXQo8ozkIIUPbDbrnNH9OBuqJhXVATMopsukLWQV+FvmXsCpd1rubnXKLz/2ySBTZRttlRKNqAGEP1ceiMYajlwdB04t89/1O/w1cDnyilFU=';
 
 $bot = new BOT_API($channelSecret, $access_token);
-$events = json_encode($bot->message);
+$content = json_encode($bot->message);
 
-$events2 = json_decode($events, true);
+$events = json_decode($content, true);
 
 if (!empty($events)) {
  	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
@@ -34,12 +34,12 @@ if (!empty($events)) {
 			// // Get text sent
 			// $text = $event['message']['text'];
 		}else{
-			$bot->replyMessageNew($bot->replyToken, "Not text : " .$events." : ".$events2);
+			$bot->replyMessageNew($bot->replyToken, "Not text : " .$events);
 
 		}
 	}
 
-	$bot->replyMessageNew($bot->replyToken, "Not Send : events as Event : " .$events." : ".$events2);
+	$bot->replyMessageNew($bot->replyToken, "Not Send : events as Event : " .$events);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
