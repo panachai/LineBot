@@ -29,7 +29,12 @@ $content = json_encode($bot->message);
 if (!empty($events)) {
 	 //$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
 
-	 $bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first เดี๋ยวทำต่อ". $events);
+	 $bot->replyMessageNew($bot->replyToken, "ทดสอบ : send first เดี๋ยวทำต่อ ". $events . " : " . $events['type']);
+//knowledge
+//https://drivesoft.co.th/tutorial/system/line-bot-api-part-01
+//https://nuuneoi.com/blog/blog.php?read_id=882
+
+
 
 	 // Loop through each event
 	foreach ($events['events'] as $event) {
