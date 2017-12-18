@@ -11,6 +11,8 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 $arrayETH = array();
 
+echo "test : ".$jsonIterator;
+
 foreach ($jsonIterator as $key => $val) {
 			if(is_array($val)) { //for ETH
         if($key == '21'){
