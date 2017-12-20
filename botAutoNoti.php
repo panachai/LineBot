@@ -41,11 +41,11 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 		if($userId == 'U291587c13144989597448437db2b8555'){ //ตรวจ userId จาก database (เดี๋ยวทำ)
 			if($arrayOMG['last_price']<$lowerValue || $arrayOMG['last_price']>$higherValue){
 				$bot->sendMessageNew($userId,
-				$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'LP : '.$arrayETH['last_price']
-				.PHP_EOL.$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'LP : '.$arrayOMG['last_price']
-				.PHP_EOL.$arrayBCH['primary_currency'].' : '.$arrayBCH['secondary_currency'].'LP : '.$arrayBCH['last_price']
+				$arrayETH['secondary_currency'].' : '.$arrayETH['last_price']
+				.PHP_EOL.$arrayOMG['secondary_currency'].' : '.$arrayOMG['last_price']
+				.PHP_EOL.$arrayBCH['secondary_currency'].' : '.$arrayBCH['last_price']
 			);
-//.PHP_EOL.$testvaluejson
+ //$arrayETH['primary_currency'].' : '.
 //change : '.$arrayETH['change'].'
 
 			if ($bot->isSuccess()) {
