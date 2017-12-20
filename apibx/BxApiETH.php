@@ -25,6 +25,8 @@ foreach ($jsonIterator as $key => $val) {
           //echo $val['orderbook']; //รอทำต่อ
         }else if ($key == '26'){
           $arrayOMG = $val;
+        }else if ($key == '27'){
+          $arrayBCH = $val;
         }
 
 		} else {

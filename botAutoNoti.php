@@ -43,7 +43,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 				$bot->sendMessageNew($userId,
 				$arrayETH['primary_currency'].' : '.$arrayETH['secondary_currency'].'LP : '.$arrayETH['last_price']
 				.PHP_EOL.$arrayOMG['primary_currency'].' : '.$arrayOMG['secondary_currency'].'LP : '.$arrayOMG['last_price']
-				
+				.PHP_EOL.$arrayBCH['primary_currency'].' : '.$arrayBCH['secondary_currency'].'LP : '.$arrayBCH['last_price']
 			);
 //.PHP_EOL.$testvaluejson
 //change : '.$arrayETH['change'].'
