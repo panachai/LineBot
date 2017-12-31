@@ -27,6 +27,8 @@ foreach ($jsonIterator as $key => $val) {
           $arrayOMG = $val;
         }else if ($key == '27'){
           $arrayBCH = $val;
+        }else if($key == '25'){
+          $arrayXRP = $val;
         }
 
 		} else {
