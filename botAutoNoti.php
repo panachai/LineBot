@@ -44,6 +44,7 @@ if(!(date("H")<6 || date("H")>23)){ //control date
 				$arrayETH['secondary_currency'].' : '.$arrayETH['last_price']
 				.PHP_EOL.$arrayOMG['secondary_currency'].' : '.$arrayOMG['last_price']
 				.PHP_EOL.$arrayBCH['secondary_currency'].' : '.$arrayBCH['last_price']
+				.PHP_EOL.$arrayEVX['secondary_currency'].' : '.$arrayEVX['last_price']
 			);
  //$arrayETH['primary_currency'].' : '.
 //change : '.$arrayETH['change'].'
