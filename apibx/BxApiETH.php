@@ -30,6 +30,8 @@ foreach ($jsonIterator as $key => $val) {
         }else if ($key == '28'){
           $arrayEVX = $val;
         
+        }else if($key == '25'){
+          $arrayXRP = $val;
         }
 
 		} else {
